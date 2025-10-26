@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("agendamento")
+@RequestMapping("transferencia")
 public class TransferenciaController {
 
     @Autowired
@@ -27,7 +27,6 @@ public class TransferenciaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    //GET http://localhost:8080/api/transferencias/extrato?page=0&size=5
     @GetMapping("/extrato")
     public ResponseEntity<Page<TransferenciaResponseDTO>> listarExtrato(
             @RequestParam(defaultValue = "0") int page,
