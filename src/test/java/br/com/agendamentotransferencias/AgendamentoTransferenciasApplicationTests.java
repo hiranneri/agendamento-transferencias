@@ -1,4 +1,4 @@
-package br.com.agendamento_transferencias;
+package br.com.agendamentotransferencias;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
