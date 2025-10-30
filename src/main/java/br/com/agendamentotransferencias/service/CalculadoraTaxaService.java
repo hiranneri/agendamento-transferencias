@@ -28,7 +28,7 @@ public class CalculadoraTaxaService {
                 .findFirst()
                 .map(e -> e.calcular(calculoTaxaDTO.getValorTransferencia()).setScale(2, RoundingMode.HALF_UP))
                 .orElseThrow(() -> new TaxaNaoAplicavelException(
-                        String.format("Não há taxa aplicável para transferências agendadas com mais de 50 dias de antecedência. Dias calculados: %d", diasAteTransferencia)
+                        String.format("Não há taxa aplicável. Dias calculados: %d", diasAteTransferencia)
                 ));
 
     }
