@@ -6,17 +6,18 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 @Component
-public class TaxaDe11a20DiasStrategy implements TaxaStrategy {
+public class TaxaDias1a10Strategy implements TaxaStrategy {
 
     @Override
     public boolean aplica(long dias) {
-        return dias >= 11 && dias <= 20;
+        return dias <= 0;
     }
 
     @Override
     public BigDecimal calcular(BigDecimal valorTransferencia) {
-        BigDecimal percentual = new BigDecimal("0.082");
-        return valorTransferencia.multiply(percentual)
+        BigDecimal valorFixo = new BigDecimal("12.00");
+        BigDecimal percentual = BigDecimal.ZERO;
+        return valorFixo.add(valorTransferencia.multiply(percentual))
                 .setScale(2, RoundingMode.HALF_UP);
     }
 }
